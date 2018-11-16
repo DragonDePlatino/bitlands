@@ -1,0 +1,8 @@
+[SOUND:NO]
+[INTRO:NO]
+[FONT:bitlands_font.bmp]
+[FULLFONT:bitlands_font.bmp]
+[GRAPHICS_FONT:bitlands_map.bmp]
+[GRAPHICS_FULLFONT:bitlands_map.bmp]
+[GRAPHICS:YES]
+[PRINT_MODE:TWBT]

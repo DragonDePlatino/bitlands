@@ -1,0 +1,24 @@
+# Personal work files
+backup/
+workspace/
+scale
+
+# DFPatch generated files
+objects_patch/*
+graphics/*.txt
+
+# Dwarf Fortress raws (get these yourself!)
+scripts/objects/
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db

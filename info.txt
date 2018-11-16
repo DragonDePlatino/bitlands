@@ -1,0 +1,8 @@
+This installer will modify your raws to enhance your Bitlands experience.
+Creatures, buildings, plants, items and minerals will be edited.
+
+Theses folders will be copied in your DF directory:
+	art, graphics, init, objects
+
+These folders will be used to patch your game:
+	init_patch, objects_patch
