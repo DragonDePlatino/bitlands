@@ -4,6 +4,7 @@ workspace/
 scale
 
 # DFPatch generated files
+init/overrides.txt
 objects_patch/*
 graphics/*.txt
 

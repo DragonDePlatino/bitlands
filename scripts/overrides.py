@@ -2,6 +2,7 @@ import os, re
 
 # A script to auto-generate Bitlands overrides.
 
+os.makedirs(os.path.dirname('../init/'), exist_ok=True)
 file = open('../init/overrides.txt', encoding='utf-8', mode='w')
 def header(text):
 	file.write('\n================================================================================\n')
