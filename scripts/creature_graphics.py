@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os, re, math
 
 '''
@@ -51,11 +53,11 @@ creaturelist = []
 regex = re.compile('\[CREATURE:(.*)\]')
 
 for inname in files:
-	with open('objects/' + inname, 'r') as infile:
+	with open('objects/' + inname, encoding='latin-1', mode='r') as infile:
 		intext = infile.read()
 		creaturelist.extend(regex.findall(intext))
 
-with open('../graphics/graphics_creatures.txt', 'w') as outfile:
+with open('../graphics/graphics_creatures.txt', encoding='latin-1', mode='w') as outfile:
 	sheet_width = 42
 	tilenum = len(creaturelist)
 	outfile.write('graphics_creatures')
@@ -81,7 +83,7 @@ with open('../graphics/graphics_creatures.txt', 'w') as outfile:
 			outfile.write('\n\t\t[DEFAULT:CREATURES:%d:%d:ADD_COLOR:DEFAULT]' % (p % sheet_width, p // sheet_width))
 		p += 1
 
-with open('../graphics/graphics_races.txt', 'w') as outfile:
+with open('../graphics/graphics_races.txt', encoding='latin-1', mode='w') as outfile:
 	sheet_width = len(joblist)
 	tilenum = len(racelist) * len(joblist)
 	outfile.write('graphics_races')

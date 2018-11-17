@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os, re
 
 '''
@@ -284,11 +286,11 @@ regex = re.compile('\[INORGANIC:(.+)\]')
 os.makedirs(os.path.dirname('../objects_patch/'), exist_ok=True)
 for inname in ('inorganic_stone_gem.txt', 'inorganic_stone_layer.txt', 'inorganic_stone_mineral.txt', 'inorganic_stone_soil.txt'):
 	stonelist = []
-	with open('objects/' + inname, 'r') as infile:
+	with open('objects/' + inname, encoding='latin-1', mode='r') as infile:
 		intext = infile.read()
 		stonelist = regex.findall(intext)
 
-	with open('../objects_patch/' + inname, encoding='utf-8', mode='w') as outfile:
+	with open('../objects_patch/' + inname, encoding='latin-1', mode='w') as outfile:
 		for name in stonelist:
 
 			stone = stone_data[name].split(':')

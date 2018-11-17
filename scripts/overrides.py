@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
+
 import os, re
 
 # A script to auto-generate Bitlands overrides.
 
 os.makedirs(os.path.dirname('../init/'), exist_ok=True)
-file = open('../init/overrides.txt', encoding='utf-8', mode='w')
+file = open('../init/overrides.txt', encoding='latin-1', mode='w')
 def header(text):
 	file.write('\n================================================================================\n')
 	file.write(' %s\n' % text)
@@ -615,7 +617,7 @@ nomove = ('CORPSE', 'PLANT_GROWTH')
 creatures = []
 regex = re.compile('\[CREATURE:(.*)\]')
 for inname in (i for i in os.listdir('objects') if 'creature' in i):
-	with open('objects/' + inname, 'r') as infile:
+	with open('objects/' + inname, 'r', encoding='latin-1') as infile:
 		intext = infile.read()
 		creatures += regex.findall(intext)
 
