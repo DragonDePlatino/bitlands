@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os, re, math
 
 '''
@@ -785,11 +787,11 @@ regex = re.compile('\[CREATURE:(.*)\]')
 os.makedirs(os.path.dirname('../objects_patch/'), exist_ok=True)
 for inname in (i for i in os.listdir('objects') if 'creature' in i):
 	creaturelist = []
-	with open('objects/' + inname, 'r') as infile:
+	with open('objects/' + inname, encoding='latin-1', mode='r') as infile:
 		intext = infile.read()
 		creaturelist = regex.findall(intext)
 
-	with open('../objects_patch/' + inname, 'w') as outfile:
+	with open('../objects_patch/' + inname, encoding='latin-1', mode='w') as outfile:
 		for name in creaturelist:
 
 			creature = creature_data[name]

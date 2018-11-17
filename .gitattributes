@@ -1,0 +1,4 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+# We don't want CRLF on the python scripts in particular.
+* text=auto
+*.py text

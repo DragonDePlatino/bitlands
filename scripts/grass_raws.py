@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import re
 
 grass_data = {
@@ -51,11 +53,11 @@ altgrass = {
 regex = re.compile('\[PLANT:(.*)\]')
 
 grasslist = []
-with open('objects/plant_grasses.txt', 'r') as file:
+with open('objects/plant_grasses.txt', encoding='latin-1', mode='r') as file:
 	text = file.read()
 	grasslist = regex.findall(text)
 
-with open('../objects_patch/plant_grasses.txt', 'w') as file:
+with open('../objects_patch/plant_grasses.txt', encoding='latin-1', mode='w') as file:
 	file.write('grass_data = {\n')
 	for name in grasslist:
 		grass = grass_data[name].split(':')
@@ -292,12 +294,12 @@ regex = re.compile('\[PLANT:(.+)\]')
 os.makedirs(os.path.dirname('../objects_patch/'), exist_ok=True)
 for inname in ('plant_standard.txt', 'plant_new_trees.txt'):
 	plantlist = []
-	with open('objects/' + inname, 'r') as infile:
+	with open('objects/' + inname, encoding='latin-1', mode='r') as infile:
 		intext = infile.read()
 		plantlist = regex.findall(intext)
 
 	writemode = 'a' if inname == 'plant_standard.txt' else 'w'
-	with open('../objects_patch/' + inname, encoding='utf-8', mode=writemode) as outfile:
+	with open('../objects_patch/' + inname, encoding='latin-1', mode=writemode) as outfile:
 		for name in plantlist:
 			if not t and name != 'MANGROVE':
 				continue
